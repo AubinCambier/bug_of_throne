@@ -1,0 +1,33 @@
+{
+  "name": "jsae",
+  "version": "1.0.0",
+  "main": "src/server/index.ts",
+  "private": true,
+  "type": "module",
+  "description": "TP de JSAE à l'IUT de Lille - reproduction interdite",
+  "author": "Thomas Fritsch <thomas.fritsch@univ-lille.fr> (https://gitlab.univ-lille.fr/thomas.fritsch)",
+  "homepage": "https://gitlab.univ-lille.fr/jsae",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "vite --host 0.0.0.0 --port 8000",
+    "full:start": "npm run server & npm run start",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "server": "tsx src/server/index.ts",
+    "test": "node --import tsx --test",
+    "test:watch": "node --import tsx --test --watch"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.8.0",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^25.5.0",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.3.1"
+  }
+}

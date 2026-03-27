@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Bug of Thrones</title>
+</head>
+<body>
+
+<video id="menu-video" autoplay muted playsinline playbackRate="0.2">
+	<source src="/assets/video/video-fond.mp4" type="video/mp4">
+</video>
+
+
+<main>
+			<section id="login-view" class="hidden"></section>
+			<section id="home-view">
+				<div class="home-container">
+					<div class="home-window">
+						<h1 class="game-title">Bug of Thrones</h1>
+						<div class="home-buttons">
+							<button id="create-room-button">Créer une partie</button>
+							<button id="refresh-rooms-button">Actualiser</button>
+							<button id="leaderboard-button">High-score</button>
+							<button id="credits-button">Crédits</button>
+						</div>
+						<div id="rooms-list" class="rooms-list"></div>
+					</div>
+				</div>
+			</section>
+
+	<section id="game-view" class="hidden">
+		<canvas id="gameCanvas"></canvas>
+
+		<div id="pause-menu" class="hidden">
+			<div class="pause-window">
+				<h3>Pause</h3>
+
+				<div class="pause-buttons">
+					<button id="resume-button">Reprendre</button>
+					  <div>
+						<input id="mode-auto" type="checkbox" name="autoFire" checked />
+						<label for="mode-auto">Tir automatique</label>
+					</div>
+					<div>
+						<input id="move-mode-keyboard" type="radio" name="move-mode" value="keyboard" checked />
+						<label for="move-mode-keyboard">Deplacement clavier</label>
+					</div>
+					<div>
+						<input id="move-mode-mouse" type="radio" name="move-mode" value="mouse" />
+						<label for="move-mode-mouse">Deplacement souris</label>
+					</div>
+					<button id="quit-button">Quitter</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="gameover-menu" class="hidden">
+			<div class="gameover-window">
+				<h3>GAME OVER</h3>
+				<div class="gameover-buttons">
+					<button id="retry-button">Rejouer</button>
+					<button id="mainmenu-button">Menu Principal</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="replay-view" class="hidden"></section>
+	<section id="leaderboard-view" class="hidden"></section>
+	<section id="credits-view" class="hidden"></section>
+</main>
+
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

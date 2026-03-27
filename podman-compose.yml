@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  bug-of-thrones:
+    container_name: bug-of-thrones
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017/bug_of_thrones
+    ports:
+      - "8000:8000"
+      - "3001:3001"
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:8
+    container_name: bug-of-thrones-mongo
+    environment:
+      MONGO_INITDB_DATABASE: bug_of_thrones
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
